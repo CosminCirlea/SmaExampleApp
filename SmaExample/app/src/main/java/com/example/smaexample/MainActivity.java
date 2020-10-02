@@ -2,14 +2,15 @@ package com.example.smaexample;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
     private TextView mainTextView;
     private EditText mainEditText;
     private Button mainButton;
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initializeViews();
+        setTexts();
         setOnClickListeners();
     }
 
@@ -45,10 +47,31 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void setTexts()
+    {
+        mainButton.setText("Schimba textul!");
+        mainEditText.setHint("Introduceti alt text");
+    }
+
     private void initializeViews()
     {
         mainTextView = findViewById(R.id.tv_main_text);
         mainEditText = findViewById(R.id.et_main_input);
         mainButton = findViewById(R.id.btn_main_button);
+    }
+
+    public void activitateaUrmatoare(View view) {
+        String inputValue = mainEditText.getText().toString();
+        if (inputValue.isEmpty())
+        {
+            Toast.makeText(this, "Introduceti un text pentru a continua", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        else
+        {
+            Intent intent = new Intent(this,SecondActivity.class);
+            intent.putExtra("extra", inputValue);
+            startActivity(intent);
+        }
     }
 }
