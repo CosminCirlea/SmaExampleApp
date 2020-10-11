@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import static com.example.smaexample.AppConstants.NAVIGATION_KEY_1;
+
 public class MainActivity extends AppCompatActivity {
     private TextView mainTextView;
     private EditText mainEditText;
@@ -42,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         mainButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //AICI SE EXECUTA CODUL DUPA CLICK
                 changeTextViewText();
             }
         });
@@ -69,8 +72,8 @@ public class MainActivity extends AppCompatActivity {
         }
         else
         {
-            Intent intent = new Intent(this,SecondActivity.class);
-            intent.putExtra("extra", inputValue);
+            Intent intent = new Intent(this, SecondActivity.class);
+            intent.putExtra(AppConstants.NAVIGATION_KEY_1, inputValue);
             startActivity(intent);
         }
     }

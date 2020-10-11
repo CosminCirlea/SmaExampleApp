@@ -1,6 +1,8 @@
 package com.example.smaexample;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,11 +10,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SecondActivity extends AppCompatActivity {
     private String extraInfo;
-    private TextView mainTextView;
-    private EditText mainEditText;
-    private Button mainButton;
+    private RecyclerView exampleListRv;
+    private ListExampleAdapter listExampleAdapter;
+    private List<ListExampleModel> exampleModelList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,15 +25,28 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
         initializeViews();
         Intent intent = getIntent();
-        extraInfo = intent.getStringExtra("extra");
-        mainTextView.setText(extraInfo);
+        extraInfo = intent.getStringExtra(AppConstants.NAVIGATION_KEY_1);
+        initializeList();
+        setRecyclerView();
     }
 
+    private void initializeList()
+    {
+        exampleModelList = new ArrayList<>();
+        exampleModelList.add(new ListExampleModel("Popescu", "Ana", 23));
+        exampleModelList.add(new ListExampleModel("Escu", "Pavel", 19));
+        exampleModelList.add(new ListExampleModel("Dinescu", "Paul", 33));
+    }
+
+    private void setRecyclerView()
+    {
+        listExampleAdapter = new ListExampleAdapter(exampleModelList);
+        exampleListRv.setLayoutManager(new LinearLayoutManager(this));
+        exampleListRv.setAdapter(listExampleAdapter);
+    }
 
     private void initializeViews()
     {
-        mainTextView = findViewById(R.id.tv_second_text);
-        mainEditText = findViewById(R.id.et_second_input);
-        mainButton = findViewById(R.id.btn_second_button);
+        exampleListRv = findViewById(R.id.rv_secondary_list);
     }
 }
