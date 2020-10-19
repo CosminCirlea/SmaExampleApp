@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class ListExampleAdapter extends RecyclerView.Adapter<ListExampleViewHolder> {
-    private List<ListExampleModel> choicesList;
+    private List<ListExampleModel> exampleList;
     private Context context;
 
     @NonNull
@@ -24,24 +24,25 @@ public class ListExampleAdapter extends RecyclerView.Adapter<ListExampleViewHold
         return viewHolder;
     }
 
-    public ListExampleAdapter(List<ListExampleModel> waterGlassesList) {
-        this.choicesList = waterGlassesList;
+    public ListExampleAdapter(List<ListExampleModel> exampleList) {
+        this.exampleList = exampleList;
     }
 
     @Override
     public void onBindViewHolder(@NonNull ListExampleViewHolder holder, int position) {
-        final ListExampleModel glassModel = choicesList.get(position);
-        holder.setValues(glassModel.getFirstname(), glassModel.getName());
+        final ListExampleModel listModel = exampleList.get(position);
+        holder.setValues(listModel.getFirstname(), listModel.getName(), listModel.getAge());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //ce se intampla la click pe rand
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return choicesList.size();
+        return exampleList.size();
     }
 }

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,12 +37,18 @@ public class SecondActivity extends AppCompatActivity {
         exampleModelList.add(new ListExampleModel("Popescu", "Ana", 23));
         exampleModelList.add(new ListExampleModel("Escu", "Pavel", 19));
         exampleModelList.add(new ListExampleModel("Dinescu", "Paul", 33));
+        exampleModelList.add(new ListExampleModel("Popescu", "Ana", 23));
+        exampleModelList.add(new ListExampleModel("Escu", "Pavel", 19));
+        exampleModelList.add(new ListExampleModel("Dinescu", "Paul", 33));
+        exampleModelList.add(new ListExampleModel("Popescu", "Ana", 23));
+        exampleModelList.add(new ListExampleModel("Escu", "Pavel", 19));
+        exampleModelList.add(new ListExampleModel("Dinescu", "Paul", 33));
     }
 
     private void setRecyclerView()
     {
         listExampleAdapter = new ListExampleAdapter(exampleModelList);
-        exampleListRv.setLayoutManager(new LinearLayoutManager(this));
+        exampleListRv.setLayoutManager(new LinearLayoutManager( this));
         exampleListRv.setAdapter(listExampleAdapter);
     }
 

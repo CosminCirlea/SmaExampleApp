@@ -12,12 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@android:color/white"
-        android:layout_margin="10dp"/>
+        android:layout_margin="10dp"
+        android:text="asdas"/>
 
     <TextView
         android:id="@+id/tv_row_example_firstname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@android:color/white"
-        android:layout_margin="10dp"/>
+        android:layout_margin="10dp"
+        android:text="exemplu"/>
 </LinearLayout>

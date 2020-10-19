@@ -45,4 +45,5 @@
         android:textAllCaps="false"
         android:onClick="activitateaUrmatoare"
         android:text="Mergi mai departe"/>
+
 </RelativeLayout>

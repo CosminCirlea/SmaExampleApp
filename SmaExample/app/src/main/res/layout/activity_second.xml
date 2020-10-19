@@ -5,8 +5,20 @@
     android:layout_height="match_parent"
     tools:context=".SecondActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_secondary_list"
+    <EditText
+        android:id="@+id/et_second_test"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="40dp"
+        android:hint="Introduceti textul"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/et_second_test">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_secondary_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </androidx.core.widget.NestedScrollView>
 </RelativeLayout>

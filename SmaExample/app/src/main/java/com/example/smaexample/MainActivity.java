@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
     {
         mainButton.setText("Schimba textul!");
         mainEditText.setHint("Introduceti alt text");
+        mainEditText.setText("SMA");
     }
 
     private void initializeViews()

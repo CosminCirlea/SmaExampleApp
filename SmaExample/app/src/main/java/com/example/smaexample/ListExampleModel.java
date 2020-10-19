@@ -11,6 +11,11 @@ public class ListExampleModel {
         this.age = age;
     }
 
+    public ListExampleModel(String name, String firstname) {
+        this.name = name;
+        this.firstname = firstname;
+    }
+
     public String getName() {
         return name;
     }
