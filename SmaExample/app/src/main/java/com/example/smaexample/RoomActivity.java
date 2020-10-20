@@ -15,7 +15,6 @@ import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 public class RoomActivity extends AppCompatActivity {
 
@@ -23,12 +22,12 @@ public class RoomActivity extends AppCompatActivity {
     private List<TestEntity> testEntityList;
     private String name;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_room);
         initializers();
+        testEntityList = new ArrayList<>();
     }
 
     private void initializers()
@@ -72,7 +71,7 @@ public class RoomActivity extends AppCompatActivity {
 
     private void insertToDatabase(final String name)
     {
-        class InsertGlass extends AsyncTask<Void, Void, TestEntity> {
+        class InsertValue extends AsyncTask<Void, Void, TestEntity> {
 
             @Override
             protected TestEntity doInBackground(Void... voids) {
@@ -87,7 +86,27 @@ public class RoomActivity extends AppCompatActivity {
             }
         }
 
-        InsertGlass insertTask = new InsertGlass();
+        InsertValue insertTask = new InsertValue();
+        insertTask.execute();
+    }
+
+    public void getFromDatabase(View view) {
+        class GetValue extends AsyncTask<Void, Void, TestEntity> {
+
+            @Override
+            protected TestEntity doInBackground(Void... voids) {
+                TestEntity testEntity = new TestEntity(name, "Ana");
+                testEntityList = testDatabase.testDAO().getAll();
+                return testEntity;
+            }
+
+            @Override
+            protected void onPostExecute(TestEntity testEntity) {
+                super.onPostExecute(testEntity);
+            }
+        }
+
+        GetValue insertTask = new GetValue();
         insertTask.execute();
     }
 }

@@ -1,6 +1,7 @@
 package com.example.smaexample;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         }
         else
         {
-            Intent intent = new Intent(this, SecondActivity.class);
+            Intent intent = new Intent(this, RoomActivity.class);
             intent.putExtra(AppConstants.NAVIGATION_KEY_1, inputValue);
             startActivity(intent);
         }
