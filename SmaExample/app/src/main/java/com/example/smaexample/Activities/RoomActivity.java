@@ -1,4 +1,4 @@
-package com.example.smaexample;
+package com.example.smaexample.Activities;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,7 +9,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.example.smaexample.AppExecutors;
+import com.example.smaexample.R;
+import com.example.smaexample.TestDatabase;
+import com.example.smaexample.TestEntity;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -27,12 +32,12 @@ public class RoomActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_room);
         initializers();
-        testEntityList = new ArrayList<>();
     }
 
     private void initializers()
     {
         testDatabase = TestDatabase.getInstance(this);
+        testEntityList = new ArrayList<>();
     }
 
     public void addToDatabase(View view) {

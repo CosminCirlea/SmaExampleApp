@@ -1,8 +1,10 @@
-package com.example.smaexample;
+package com.example.smaexample.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.smaexample.R;
 
 public class ScrollViewExampleActivity extends AppCompatActivity {
 

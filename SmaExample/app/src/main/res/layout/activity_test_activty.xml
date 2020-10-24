@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".TestActivty">
+    tools:context=".Activities.TestActivty">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_test_list"

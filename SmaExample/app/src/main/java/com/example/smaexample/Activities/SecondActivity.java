@@ -1,4 +1,4 @@
-package com.example.smaexample;
+package com.example.smaexample.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -10,6 +10,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.smaexample.AppConstants;
+import com.example.smaexample.ListExampleAdapter;
+import com.example.smaexample.ListExampleModel;
+import com.example.smaexample.R;
 
 import java.util.ArrayList;
 import java.util.List;

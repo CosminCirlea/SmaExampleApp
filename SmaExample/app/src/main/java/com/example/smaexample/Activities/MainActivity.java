@@ -1,7 +1,6 @@
-package com.example.smaexample;
+package com.example.smaexample.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.room.Room;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +10,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import static com.example.smaexample.AppConstants.NAVIGATION_KEY_1;
+import com.example.smaexample.Activities.RoomActivity;
+import com.example.smaexample.AppConstants;
+import com.example.smaexample.R;
 
 public class MainActivity extends AppCompatActivity {
     private TextView mainTextView;

@@ -1,10 +1,14 @@
-package com.example.smaexample;
+package com.example.smaexample.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+
+import com.example.smaexample.ListExampleAdapter;
+import com.example.smaexample.ListExampleModel;
+import com.example.smaexample.R;
 
 import java.util.ArrayList;
 import java.util.List;
