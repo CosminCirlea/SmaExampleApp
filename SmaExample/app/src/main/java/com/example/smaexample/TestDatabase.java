@@ -6,6 +6,8 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
+import com.example.smaexample.Models.TestEntity;
+
 @Database(entities = {TestEntity.class}, version = 1, exportSchema = false)
 public abstract class TestDatabase extends RoomDatabase {
     private static final String DB_NAME="TEST_DB";

@@ -6,8 +6,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
-import com.example.smaexample.ListExampleAdapter;
-import com.example.smaexample.ListExampleModel;
+import com.example.smaexample.adapters.ListExampleAdapter;
+import com.example.smaexample.Models.ListExampleModel;
 import com.example.smaexample.R;
 
 import java.util.ArrayList;

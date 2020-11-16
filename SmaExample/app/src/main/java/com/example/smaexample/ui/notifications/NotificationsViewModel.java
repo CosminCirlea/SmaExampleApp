@@ -1,4 +1,4 @@
-package com.example.smaexample.Activities.ui.notifications;
+package com.example.smaexample.ui.notifications;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

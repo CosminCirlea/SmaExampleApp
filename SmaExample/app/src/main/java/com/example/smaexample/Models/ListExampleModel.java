@@ -1,4 +1,4 @@
-package com.example.smaexample;
+package com.example.smaexample.Models;
 
 public class ListExampleModel {
     private String name;
@@ -14,6 +14,9 @@ public class ListExampleModel {
     public ListExampleModel(String name, String firstname) {
         this.name = name;
         this.firstname = firstname;
+    }
+
+    public ListExampleModel() {
     }
 
     public String getName() {

@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.smaexample.Activities.RoomActivity;
 import com.example.smaexample.AppConstants;
+import com.example.smaexample.Helpers.StorageHelper;
 import com.example.smaexample.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -54,9 +55,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void setTexts()
     {
-        mainButton.setText("Schimba textul!");
-        mainEditText.setHint("Introduceti alt text");
-        mainEditText.setText("SMA");
+//        mainButton.setText("Schimba textul!");
+        mainButton.setText(StorageHelper.getInstance().getTestEntity().getName());
+//        mainEditText.setHint("Introduceti alt text");
+//        mainEditText.setText("SMA");
     }
 
     private void initializeViews()

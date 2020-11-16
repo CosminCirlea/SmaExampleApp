@@ -6,14 +6,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.smaexample.AppConstants;
-import com.example.smaexample.ListExampleAdapter;
-import com.example.smaexample.ListExampleModel;
+import com.example.smaexample.adapters.ListExampleAdapter;
+import com.example.smaexample.Models.ListExampleModel;
 import com.example.smaexample.R;
 
 import java.util.ArrayList;

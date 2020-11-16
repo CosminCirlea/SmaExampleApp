@@ -8,15 +8,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-import com.example.smaexample.Activities.ui.dashboard.DashboardFragment;
-import com.example.smaexample.Activities.ui.home.HomeFragment;
-import com.example.smaexample.Activities.ui.notifications.NotificationsFragment;
+import com.example.smaexample.ui.ProfileFragment;
+import com.example.smaexample.ui.dashboard.DashboardFragment;
+import com.example.smaexample.ui.home.HomeFragment;
+import com.example.smaexample.ui.notifications.NotificationsFragment;
 import com.example.smaexample.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class FirstMenuActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
     private HomeFragment homeFragment;
-    private DashboardFragment dashboardFragment;
+    private ProfileFragment dashboardFragment;
     private NotificationsFragment notificationsFragment;
     private BottomNavigationView navView;
     private Fragment activeFragment;
@@ -26,11 +27,10 @@ public class FirstMenuActivity extends AppCompatActivity implements BottomNaviga
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_menu);
-        navView = findViewById(R.id.bnv_main_menu);
-        navView.setOnNavigationItemSelectedListener(this);
 
         initializeViews();
         LoadFragment();
+        navView.setOnNavigationItemSelectedListener(this);
     }
 
     @Override
@@ -61,8 +61,10 @@ public class FirstMenuActivity extends AppCompatActivity implements BottomNaviga
     }
 
     public void initializeViews() {
+        navView = findViewById(R.id.bnv_main_menu);
+
         homeFragment = new HomeFragment();
-        dashboardFragment = new DashboardFragment();
+        dashboardFragment = new ProfileFragment();
         notificationsFragment = new NotificationsFragment();
 
         activeFragment = homeFragment;

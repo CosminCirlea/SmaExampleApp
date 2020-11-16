@@ -5,11 +5,13 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 
+import com.example.smaexample.Models.TestEntity;
+
 import java.util.List;
 
 @Dao
 public interface TestDAO {
-    @Query("SELECT * FROM testentity")
+    @Query("SELECT * FROM TestEntity")
     List<TestEntity> getAll();
 
     @Query("SELECT * FROM testentity WHERE id IN (:userIds)")

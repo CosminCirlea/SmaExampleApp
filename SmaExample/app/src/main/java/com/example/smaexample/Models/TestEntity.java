@@ -1,4 +1,4 @@
-package com.example.smaexample;
+package com.example.smaexample.Models;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -24,6 +24,10 @@ public class TestEntity {
     public TestEntity(String name, String firstname) {
         this.name = name;
         this.firstname = firstname;
+    }
+
+    @Ignore
+    public TestEntity() {
     }
 
     public int getId() {

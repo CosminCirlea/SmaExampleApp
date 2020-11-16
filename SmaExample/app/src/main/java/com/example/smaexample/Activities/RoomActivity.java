@@ -9,12 +9,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.example.smaexample.AppExecutors;
+import com.example.smaexample.Helpers.StorageHelper;
+import com.example.smaexample.Models.UserModel;
 import com.example.smaexample.R;
 import com.example.smaexample.TestDatabase;
-import com.example.smaexample.TestEntity;
+import com.example.smaexample.Models.TestEntity;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -26,12 +27,15 @@ public class RoomActivity extends AppCompatActivity {
     private TestDatabase testDatabase;
     private List<TestEntity> testEntityList;
     private String name;
+    private UserModel userModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_room);
         initializers();
+
+        userModel = StorageHelper.getInstance().getUserModel();
     }
 
     private void initializers()
@@ -102,6 +106,7 @@ public class RoomActivity extends AppCompatActivity {
             protected TestEntity doInBackground(Void... voids) {
                 TestEntity testEntity = new TestEntity(name, "Ana");
                 testEntityList = testDatabase.testDAO().getAll();
+                StorageHelper.getInstance().setTestEntity(testEntity);
                 return testEntity;
             }
 
